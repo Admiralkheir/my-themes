@@ -1,0 +1,13 @@
+{
+  "name": "my-themes",
+  "owner": {
+    "name": "Admiralkheir"
+  },
+  "description": "Backdrop themes for the Claude desktop app, picked with /my-theme.",
+  "plugins": [
+    {
+      "name": "my-themes",
+      "source": "./"
+    }
+  ]
+}

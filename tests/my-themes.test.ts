@@ -1,0 +1,99 @@
+import { expect, mock, test } from 'claude-code/testing'
+import type { On, ThemeSetArgs } from 'claude-code'
+
+type World = { sets: ThemeSetArgs[]; clears: number; store: Record<string, unknown> }
+
+/** The engine beneath the mod: one repository (its main tree at /repo), a desktop row id, a theme noun that records. */
+function world(on: On, stored: Record<string, unknown> = {}, hostId = 'local_a'): World {
+  const seen: World = { sets: [], clears: 0, store: { ...stored } }
+
+  mock.env(on, { CLAUDE_CODE_HOST_SESSION_ID: hostId })
+  on('store.get', (_, e) => ({ value: seen.store[e.key] }))
+  on('store.set', (_, e) => {
+    seen.store[e.key] = e.value
+
+    return { value: undefined }
+  })
+  on('store.delete', (_, e) => {
+    delete seen.store[e.key]
+
+    return { value: undefined }
+  })
+  on('store.keys', () => ({ value: Object.keys(seen.store) }))
+  on('session.root', () => ({ value: '/repo/.claude/worktrees/wt-1' }))
+  on('session.repo', () => ({ value: { name: 'repo', root: '/repo', remote: null, internal: false } }))
+  on('command.register', (_, e) => ({ value: { command: e.name } }))
+  on('session.start', (_, e) => ({ cwd: e.cwd }))
+  on('theme.set', (_, e) => {
+    seen.sets.push(e)
+
+    return { value: { isDrawn: true, requestId: 'r' } }
+  })
+  on('theme.clear', () => {
+    seen.clears += 1
+
+    return { value: { isDrawn: false, reason: 'cleared' } }
+  })
+
+  return seen
+}
+
+type Starts = { session: { start: (input: { cwd: string; surface: 'desktop'; isInteractive: boolean }) => Promise<unknown> } }
+
+const start = ($: Starts) =>
+  $.session.start({ cwd: '/repo/.claude/worktrees/wt-1', surface: 'desktop', isInteractive: true })
+
+test('a project pick sends a backdrop alone, never a palette, kept under the main tree', async ($, on) => {
+  const seen = world(on)
+
+  await start($)
+  expect(seen.sets.length).toBe(0)
+  expect(seen.clears).toBe(0)
+
+  const answer = await $.command.run({ command: 'my-theme', args: 'cthulhu' } as never)
+
+  expect(String((answer as { text?: string }).text)).toContain('this project')
+  expect(seen.sets.length).toBe(1)
+  expect(seen.sets[0]?.colors).toBeUndefined()
+  expect(seen.sets[0]?.overrideColorScheme).toBe('dark')
+  expect(JSON.stringify(seen.sets[0]?.backdrop)).toContain('"scene":"cthulhu"')
+  expect(seen.store['project:/repo']).toBe('cthulhu')
+})
+
+test('another session of the project takes the pick at its start', async ($, on) => {
+  const seen = world(on, { 'project:/repo': 'cthulhu' }, 'local_b')
+
+  await start($)
+  expect(seen.sets.length).toBe(1)
+  expect(seen.sets[0]?.colors).toBeUndefined()
+})
+
+test('"off session" clears this session alone and keeps the project pick', async ($, on) => {
+  const seen = world(on, { 'project:/repo': 'cthulhu' })
+
+  await start($)
+  await $.command.run({ command: 'my-theme', args: 'off session' } as never)
+
+  expect(seen.clears).toBe(1)
+  expect(seen.store['project:/repo']).toBe('cthulhu')
+  expect(seen.store['session:local_a']).toEqual({ theme: null })
+
+  // "follow" drops the session's own pick and shows the project's again.
+  await $.command.run({ command: 'my-theme', args: 'follow' } as never)
+  expect(seen.store['session:local_a']).toBeUndefined()
+  expect(seen.sets.length).toBe(2)
+})
+
+test('a session pick wins over the project, and off for the project leaves another mod alone', async ($, on) => {
+  const seen = world(on)
+
+  await start($)
+  // Nothing of this mod's is shown: an off must not clear what another mod set.
+  await $.command.run({ command: 'my-theme', args: 'off' } as never)
+  expect(seen.clears).toBe(0)
+
+  await $.command.run({ command: 'my-theme', args: 'cthulhu session' } as never)
+  expect(seen.store['session:local_a']).toEqual({ theme: 'cthulhu' })
+  expect(seen.store['project:/repo']).toBeUndefined()
+  expect(seen.sets.length).toBe(1)
+})
