@@ -32,7 +32,7 @@ A project is a git repository's main working tree, so its worktrees share its pi
 
 ## Why no palette
 
-The desktop app keeps a palette a mod sends as its own colors for every session (Settings, Appearance: "A mod set the colors"), and turning the theme off does not take it back. So a theme here sends only its scene, the glass `tint` (the theme's ground color) and the kind of window it is made for. `hooks/themes/cthulhu/palette.ts` stays, unused.
+The desktop app keeps a palette a mod sends as its own colors for every session (Settings, Appearance: "A mod set the colors"), and turning the theme off does not take it back. So a theme here sends only its scene, the glass `tint` (the theme's ground color) and the kind of window it is made for, as `/custom-theme` does.
 
 If the app still shows "A mod set the colors" from version 0.1.0, press Remove colors there once.
 

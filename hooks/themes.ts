@@ -6,7 +6,7 @@ import { SCENE as cthulhuScene } from './themes/cthulhu/scene.js'
  * One theme on the card. Like /custom-theme, a theme is a backdrop alone: a scene, the glass over it and the kind
  * of window it is made for. No `colors` palette is sent: the desktop app keeps a mod's palette as its own colors
  * for every session (Settings, Appearance, "A mod set the colors"), and turning the theme off does not take it
- * back. `themes/cthulhu/palette.ts` stays beside the scene, unused, for the day the app keeps a palette per session.
+ * back.
  *
  * To add one: make a folder under `themes/` with its scene (one SVG string), then add an entry here. Build the
  * scene only from what the app's own example themes use: CSS keyframes with written-out values,
@@ -32,7 +32,7 @@ export const THEMES: MyTheme[] = [
     title: "Cthulhu — R'lyeh",
     blurb: 'An abyss where tentacles writhe, bubbles rise and, now and then, an eye opens.',
     window: 'dark',
-    // The palette's dark surface-1, so the panels keep the abyss's green-black.
+    // The abyss's green-black, so the panels keep the scene's ground.
     glass: { blur: 10, tint: '#0b1615', opacity: 0.55 },
     scene: cthulhuScene,
   },
