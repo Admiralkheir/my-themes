@@ -10,6 +10,14 @@ Your own themes for the Claude desktop app. They work as `/custom-theme` does: a
 - `/my-theme follow`: this session drops its own pick and follows the project again
 - `/my-theme list`: names the themes
 
+A project is a git repository's main working tree, so its worktrees share its pick; outside a repository it is the session's folder. A session started without a folder has a folder of its own, so a pick there is that session's alone.
+
+## Themes
+
+| Name | Theme | Window | What it shows |
+| --- | --- | --- | --- |
+| `cthulhu` | Cthulhu — R'lyeh | dark | An abyss where tentacles writhe, bubbles rise and, now and then, an eye opens. |
+
 ## Install
 
 At the prompt of a terminal session:
@@ -28,8 +36,6 @@ In the desktop app, where `/plugin` does not run: click + next to the prompt box
 
 To get new themes later: `claude plugin marketplace update my-themes`, then `claude plugin update my-themes@my-themes`, then `/reload-plugins` or a restart.
 
-A project is a git repository's main working tree, so its worktrees share its pick; outside a repository it is the session's folder. A session started without a folder has a folder of its own, so a pick there is that session's alone.
-
 ## Why no palette
 
 The desktop app keeps a palette a mod sends as its own colors for every session (Settings, Appearance: "A mod set the colors"), and turning the theme off does not take it back. So a theme here sends only its scene, the glass `tint` (the theme's ground color) and the kind of window it is made for, as `/custom-theme` does.
@@ -40,7 +46,8 @@ If the app still shows "A mod set the colors" from version 0.1.0, press Remove c
 
 1. Make a folder under `hooks/themes/<id>/` with `scene.ts` (one SVG string).
 2. Add an entry for it to `THEMES` in `hooks/themes.ts`: its `window` (`light` or `dark`) and its `glass`, with a `tint` from the theme's ground.
-3. Raise `version` in `.claude-plugin/plugin.json`, run `claude plugin test .`, then commit and push.
-4. Update the installed copy as under Install.
+3. Add a row for it to the table under Themes above.
+4. Raise `version` in `.claude-plugin/plugin.json`, run `claude plugin test .`, then commit and push.
+5. Update the installed copy as under Install.
 
 Build a scene only from what the app's own example themes use: CSS keyframes with written-out values, `transform-origin` in positive px, `animation-duration` and `animation-delay` set inline, no `var()` inside a keyframe, no SMIL, and no `@media` but `@media (prefers-reduced-motion: reduce) { * { animation: none !important } }`. Other constructs made the desktop app hold the whole scene still.
