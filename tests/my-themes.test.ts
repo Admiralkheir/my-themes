@@ -97,3 +97,16 @@ test('a session pick wins over the project, and off for the project leaves anoth
   expect(seen.store['project:/repo']).toBeUndefined()
   expect(seen.sets.length).toBe(1)
 })
+
+test('the light theme asks for a light window and still sends no palette', async ($, on) => {
+  const seen = world(on)
+
+  await start($)
+  await $.command.run({ command: 'my-theme', args: 'cthulhu-mist' } as never)
+
+  expect(seen.sets.length).toBe(1)
+  expect(seen.sets[0]?.colors).toBeUndefined()
+  expect(seen.sets[0]?.overrideColorScheme).toBe('light')
+  expect(JSON.stringify(seen.sets[0]?.backdrop)).toContain('"scene":"cthulhu-mist"')
+  expect(seen.store['project:/repo']).toBe('cthulhu-mist')
+})

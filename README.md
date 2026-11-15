@@ -17,6 +17,7 @@ A project is a git repository's main working tree, so its worktrees share its pi
 | Name | Theme | Window | What it shows |
 | --- | --- | --- | --- |
 | `cthulhu` | Cthulhu — R'lyeh | dark | An abyss where tentacles writhe, bubbles rise and, now and then, an eye opens. |
+| `cthulhu-mist` | Cthulhu — Mist over R'lyeh | light | A cold grey sea in drizzle, where something vast with wings looms out of the fog and, now and then, looks back. |
 
 ## Install
 
@@ -44,7 +45,7 @@ If the app still shows "A mod set the colors" from version 0.1.0, press Remove c
 
 ## Adding a theme
 
-1. Make a folder under `hooks/themes/<id>/` with `scene.ts` (one SVG string).
+1. Make a folder under `hooks/themes/<id>/` with `scene.ts` (one SVG string). Tentacles that writhe come from `hooks/themes/tentacles.ts`.
 2. Add an entry for it to `THEMES` in `hooks/themes.ts`: its `window` (`light` or `dark`) and its `glass`, with a `tint` from the theme's ground.
 3. Add a row for it to the table under Themes above.
 4. Raise `version` in `.claude-plugin/plugin.json`, run `claude plugin test .`, then commit and push.

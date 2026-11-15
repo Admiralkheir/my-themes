@@ -1,6 +1,7 @@
 import type { ThemeBackdropGlass } from 'claude-code'
 
 import { SCENE as cthulhuScene } from './themes/cthulhu/scene.js'
+import { SCENE as cthulhuMistScene } from './themes/cthulhu-mist/scene.js'
 
 /**
  * One theme on the card. Like /custom-theme, a theme is a backdrop alone: a scene, the glass over it and the kind
@@ -35,6 +36,15 @@ export const THEMES: MyTheme[] = [
     // The abyss's green-black, so the panels keep the scene's ground.
     glass: { blur: 10, tint: '#0b1615', opacity: 0.55 },
     scene: cthulhuScene,
+  },
+  {
+    id: 'cthulhu-mist',
+    title: "Cthulhu — Mist over R'lyeh",
+    blurb: 'A cold grey sea in drizzle, where something vast with wings looms out of the fog and, now and then, looks back.',
+    window: 'light',
+    // The overcast's cold grey, so the panels keep the scene's ground and dark text stays readable.
+    glass: { blur: 10, tint: '#d5dbde', opacity: 0.55 },
+    scene: cthulhuMistScene,
   },
 ]
 
