@@ -136,3 +136,29 @@ test('the frostpunk-whiteout theme asks for a light window and sends no palette'
   expect(JSON.stringify(seen.sets[0]?.backdrop)).toContain('"scene":"frostpunk-whiteout"')
   expect(seen.store['session:local_a']).toEqual({ theme: 'frostpunk-whiteout' })
 })
+
+test('the automatons theme asks for a dark window and sends no palette', async ($, on) => {
+  const seen = world(on)
+
+  await start($)
+  await $.command.run({ command: 'my-theme', args: 'automatons session' } as never)
+
+  expect(seen.sets.length).toBe(1)
+  expect(seen.sets[0]?.colors).toBeUndefined()
+  expect(seen.sets[0]?.overrideColorScheme).toBe('dark')
+  expect(JSON.stringify(seen.sets[0]?.backdrop)).toContain('"scene":"automatons"')
+  expect(seen.store['session:local_a']).toEqual({ theme: 'automatons' })
+})
+
+test('the automatons-whiteout theme asks for a light window and sends no palette', async ($, on) => {
+  const seen = world(on)
+
+  await start($)
+  await $.command.run({ command: 'my-theme', args: 'automatons-whiteout session' } as never)
+
+  expect(seen.sets.length).toBe(1)
+  expect(seen.sets[0]?.colors).toBeUndefined()
+  expect(seen.sets[0]?.overrideColorScheme).toBe('light')
+  expect(JSON.stringify(seen.sets[0]?.backdrop)).toContain('"scene":"automatons-whiteout"')
+  expect(seen.store['session:local_a']).toEqual({ theme: 'automatons-whiteout' })
+})
