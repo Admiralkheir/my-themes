@@ -1,6 +1,6 @@
 {
   "name": "my-themes",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "Your own themes for the Claude desktop app, picked with /my-theme for a project or one session, as /custom-theme does.",
   "types": "./types/index.d.ts"
 }

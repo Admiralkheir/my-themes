@@ -5,6 +5,10 @@ import { SCENE as cthulhuMistScene } from './themes/cthulhu-mist/scene.js'
 import { SCENE as frostpunkScene } from './themes/frostpunk/scene.js'
 import { SCENE as frostpunkWhiteoutScene } from './themes/frostpunk-whiteout/scene.js'
 import { SCENE_DAY as automatonsDayScene, SCENE_NIGHT as automatonsNightScene } from './themes/automatons/scene.js'
+import { SCENE_FOG as innsmouthFogScene, SCENE_NIGHT as innsmouthNightScene } from './themes/innsmouth/scene.js'
+import { SCENE_BLIGHT as colourBlightScene, SCENE_NIGHT as colourNightScene } from './themes/colour/scene.js'
+import { SCENE_DAY as lighthouseDayScene, SCENE_NIGHT as lighthouseNightScene } from './themes/lighthouse/scene.js'
+import { SCENE as yogSothothVellumScene } from './themes/yog-sothoth/scene.js'
 
 /**
  * One theme on the card. Like /custom-theme, a theme is a backdrop alone: a scene, the glass over it and the kind
@@ -84,6 +88,69 @@ export const THEMES: MyTheme[] = [
     // The whiteout's cold pale grey, so the panels keep the scene's ground and dark text stays readable.
     glass: { blur: 10, tint: '#dfe5eb', opacity: 0.55 },
     scene: automatonsDayScene,
+  },
+  {
+    id: 'innsmouth',
+    title: 'Cthulhu — Innsmouth',
+    blurb: 'A crooked harbor town by moonlight, where windows flicker, a lighthouse beam sweeps the bay and, out on Devil Reef, figures rise from the water with glowing eyes.',
+    window: 'dark',
+    // The harbor night's green-black, so the panels keep the scene's ground.
+    glass: { blur: 10, tint: '#0d1a1b', opacity: 0.55 },
+    scene: innsmouthNightScene,
+  },
+  {
+    id: 'innsmouth-fog',
+    title: 'Cthulhu — Innsmouth in the Fog',
+    blurb: 'The same harbor on a grey-green morning, fog drifting past the gambrel roofs, the striped lighthouse and the reef where something surfaces.',
+    window: 'light',
+    // The fog's pale green-grey, so the panels keep the scene's ground and dark text stays readable.
+    glass: { blur: 10, tint: '#d4d8cc', opacity: 0.55 },
+    scene: innsmouthFogScene,
+  },
+  {
+    id: 'colour',
+    title: 'Cthulhu — The Colour Out of Space',
+    blurb: 'A blighted farm at night, where dead branches move without wind and a colour that is no colour climbs out of the old well into the sky.',
+    window: 'dark',
+    // The night's violet-black, so the panels keep the scene's ground.
+    glass: { blur: 10, tint: '#120c16', opacity: 0.55 },
+    scene: colourNightScene,
+  },
+  {
+    id: 'colour-blight',
+    title: 'Cthulhu — The Blasted Heath',
+    blurb: 'The same farm by a bleached day, ash-grey grass and grey trees, with the colour left only in the well, the crystals and the grass around it.',
+    window: 'light',
+    // The bleached sky's pale grey, so the panels keep the scene's ground and dark text stays readable.
+    glass: { blur: 10, tint: '#e2dde1', opacity: 0.55 },
+    scene: colourBlightScene,
+  },
+  {
+    id: 'lighthouse',
+    title: 'Cthulhu — The Light',
+    blurb: 'A lighthouse on a bare rock in a black-and-white storm, its beam swinging toward you and away, gulls crossing, the sea breaking white and a limb rising from the swell.',
+    window: 'dark',
+    // The storm's near-black, so the panels keep the scene's ground.
+    glass: { blur: 10, tint: '#141414', opacity: 0.55 },
+    scene: lighthouseNightScene,
+  },
+  {
+    id: 'lighthouse-day',
+    title: 'Cthulhu — The Light by Day',
+    blurb: 'The same lighthouse under a silver sky, the white tower against the grey sea, spray bursting on the rock and a limb rising from the swell.',
+    window: 'light',
+    // The silver sky's pale grey, so the panels keep the scene's ground and dark text stays readable.
+    glass: { blur: 10, tint: '#d9d9d6', opacity: 0.55 },
+    scene: lighthouseDayScene,
+  },
+  {
+    id: 'yog-sothoth-vellum',
+    title: 'Cthulhu — Yog-Sothoth on Vellum',
+    blurb: 'A plate from a forbidden book: Yog-Sothoth as a cluster of globes drawn in iron-gall ink, held in astrolabe rings that turn against each other, with a red rubric and the text running down the margin.',
+    window: 'light',
+    // The vellum's warm parchment, so the panels keep the scene's ground and dark text stays readable.
+    glass: { blur: 10, tint: '#eadfc6', opacity: 0.55 },
+    scene: yogSothothVellumScene,
   },
 ]
 
