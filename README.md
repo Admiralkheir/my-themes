@@ -39,6 +39,14 @@ A project is a git repository's main working tree, so its worktrees share its pi
 | `eva-geofront-day` | Evangelion — The Geofront by Day | light | The same hollow with daylight piped down onto green trees and a blue lake, dust drifting in the shafts around the black pyramid. |
 | `eva-red-sea` | Evangelion — The Red Sea | dark | The beach after Third Impact at night: a sea of LCL breaking red on white sand, a moon smeared with blood and the broken white head on the horizon, one eye open, looking. |
 | `eva-red-sea-day` | Evangelion — The Red Sea by Day | light | The same beach under a bleached, rose-white sky, the sea still red, the sand white and the giant head pale against the haze. |
+| `metro-station` | Metro — The Station | dark | A pylon station lived in down its central hall: tents along the platform lit from inside, strings of bulbs between the arches, laundry on a line, a red banner, sparks from a barrel fire and a lamp swinging on its chain. |
+| `metro-polis` | Metro — Polis | light | The station of the learned in pale marble: brass chandeliers under every other arch, a green banner, book stalls and a statue on its plinth, with dust drifting and the same lamp swinging. |
+| `metro-surface` | Metro — The Dead City | dark | Moscow's ruins under a poisoned night: a Stalinist high-rise with its red star, the TV tower, broken panel blocks and a fallen crane, a metro entrance with its red M flickering and winged things circling. |
+| `metro-ash` | Metro — Ash Winter | light | The same ruins on a nuclear-winter day: a weak sun through ash-grey cloud, the towers grey on grey, ash falling and winged things still circling. |
+| `metro-locomotive` | Metro — Eastbound by Night | dark | An armoured steam locomotive crossing a bridge over a frozen river at night, girders streaming past, wheels and rod turning, smoke rolling back from the stack and the headlamp cutting through the snow. |
+| `metro-locomotive-day` | Metro — The Frozen River | light | The same train by an overcast day, black iron against white ice and a pale sky, the far bank's pines and onion domes sliding by and grey smoke trailing behind. |
+| `metro-dry-sea-night` | Metro — Desert Night | dark | A rusted ship keeled over on a dried-up seabed under stars and moon, a lantern in its bridge, a fire under its bow, a derrick's flare burning on the mesas and, now and then, a meteor. |
+| `metro-dry-sea` | Metro — The Dry Sea | light | The same wreck at a white-hot noon: cracked, salt-streaked seabed, an old pier walking out to nothing, dust running on the wind, a tumbleweed rolling past and a bird circling. |
 
 ## Install
 
