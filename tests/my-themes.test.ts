@@ -162,3 +162,81 @@ test('the automatons-whiteout theme asks for a light window and sends no palette
   expect(JSON.stringify(seen.sets[0]?.backdrop)).toContain('"scene":"automatons-whiteout"')
   expect(seen.store['session:local_a']).toEqual({ theme: 'automatons-whiteout' })
 })
+
+test('the innsmouth theme asks for a dark window and sends no palette', async ($, on) => {
+  const seen = world(on)
+
+  await start($)
+  await $.command.run({ command: 'my-theme', args: 'innsmouth session' } as never)
+
+  expect(seen.sets.length).toBe(1)
+  expect(seen.sets[0]?.colors).toBeUndefined()
+  expect(seen.sets[0]?.overrideColorScheme).toBe('dark')
+  expect(JSON.stringify(seen.sets[0]?.backdrop)).toContain('"scene":"innsmouth"')
+  expect(seen.store['session:local_a']).toEqual({ theme: 'innsmouth' })
+})
+
+test('the innsmouth-fog theme asks for a light window and sends no palette', async ($, on) => {
+  const seen = world(on)
+
+  await start($)
+  await $.command.run({ command: 'my-theme', args: 'innsmouth-fog session' } as never)
+
+  expect(seen.sets.length).toBe(1)
+  expect(seen.sets[0]?.colors).toBeUndefined()
+  expect(seen.sets[0]?.overrideColorScheme).toBe('light')
+  expect(JSON.stringify(seen.sets[0]?.backdrop)).toContain('"scene":"innsmouth-fog"')
+  expect(seen.store['session:local_a']).toEqual({ theme: 'innsmouth-fog' })
+})
+
+test('the colour theme asks for a dark window and sends no palette', async ($, on) => {
+  const seen = world(on)
+
+  await start($)
+  await $.command.run({ command: 'my-theme', args: 'colour session' } as never)
+
+  expect(seen.sets.length).toBe(1)
+  expect(seen.sets[0]?.colors).toBeUndefined()
+  expect(seen.sets[0]?.overrideColorScheme).toBe('dark')
+  expect(JSON.stringify(seen.sets[0]?.backdrop)).toContain('"scene":"colour"')
+  expect(seen.store['session:local_a']).toEqual({ theme: 'colour' })
+})
+
+test('the colour-blight theme asks for a light window and sends no palette', async ($, on) => {
+  const seen = world(on)
+
+  await start($)
+  await $.command.run({ command: 'my-theme', args: 'colour-blight session' } as never)
+
+  expect(seen.sets.length).toBe(1)
+  expect(seen.sets[0]?.colors).toBeUndefined()
+  expect(seen.sets[0]?.overrideColorScheme).toBe('light')
+  expect(JSON.stringify(seen.sets[0]?.backdrop)).toContain('"scene":"colour-blight"')
+  expect(seen.store['session:local_a']).toEqual({ theme: 'colour-blight' })
+})
+
+test('the lighthouse theme asks for a dark window and sends no palette', async ($, on) => {
+  const seen = world(on)
+
+  await start($)
+  await $.command.run({ command: 'my-theme', args: 'lighthouse session' } as never)
+
+  expect(seen.sets.length).toBe(1)
+  expect(seen.sets[0]?.colors).toBeUndefined()
+  expect(seen.sets[0]?.overrideColorScheme).toBe('dark')
+  expect(JSON.stringify(seen.sets[0]?.backdrop)).toContain('"scene":"lighthouse"')
+  expect(seen.store['session:local_a']).toEqual({ theme: 'lighthouse' })
+})
+
+test('the lighthouse-day theme asks for a light window and sends no palette', async ($, on) => {
+  const seen = world(on)
+
+  await start($)
+  await $.command.run({ command: 'my-theme', args: 'lighthouse-day session' } as never)
+
+  expect(seen.sets.length).toBe(1)
+  expect(seen.sets[0]?.colors).toBeUndefined()
+  expect(seen.sets[0]?.overrideColorScheme).toBe('light')
+  expect(JSON.stringify(seen.sets[0]?.backdrop)).toContain('"scene":"lighthouse-day"')
+  expect(seen.store['session:local_a']).toEqual({ theme: 'lighthouse-day' })
+})

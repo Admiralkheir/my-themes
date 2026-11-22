@@ -22,6 +22,12 @@ A project is a git repository's main working tree, so its worktrees share its pi
 | `frostpunk-whiteout` | Frostpunk — Whiteout | light | The same frozen city by grey daylight, where the generator stands dark against the snow, its smoke rolls charcoal across a pale sky and, now and then, a steam walker strides along the rim. |
 | `automatons` | Frostpunk — The Automatons | dark | Steam automatons striding across a frozen plain at night on jointed legs, furnaces glowing, stacks smoking and searchlights on the snow, under a faint aurora. |
 | `automatons-whiteout` | Frostpunk — Automatons in the Whiteout | light | The same automatons by grey daylight, dark iron striding through the snow with smoke rolling from their stacks across a pale sky. |
+| `innsmouth` | Cthulhu — Innsmouth | dark | A crooked harbor town by moonlight, where windows flicker, a lighthouse beam sweeps the bay and, out on Devil Reef, figures rise from the water with glowing eyes. |
+| `innsmouth-fog` | Cthulhu — Innsmouth in the Fog | light | The same harbor on a grey-green morning, fog drifting past the gambrel roofs, the striped lighthouse and the reef where something surfaces. |
+| `colour` | Cthulhu — The Colour Out of Space | dark | A blighted farm at night, where dead branches move without wind and a colour that is no colour climbs out of the old well into the sky. |
+| `colour-blight` | Cthulhu — The Blasted Heath | light | The same farm by a bleached day, ash-grey grass and grey trees, with the colour left only in the well, the crystals and the grass around it. |
+| `lighthouse` | Cthulhu — The Light | dark | A lighthouse on a bare rock in a black-and-white storm, its beam swinging toward you and away, gulls crossing, the sea breaking white and a limb rising from the swell. |
+| `lighthouse-day` | Cthulhu — The Light by Day | light | The same lighthouse under a silver sky, the white tower against the grey sea, spray bursting on the rock and a limb rising from the swell. |
 
 ## Install
 
