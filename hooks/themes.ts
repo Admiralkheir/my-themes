@@ -4,6 +4,7 @@ import { SCENE as cthulhuScene } from './themes/cthulhu/scene.js'
 import { SCENE as cthulhuMistScene } from './themes/cthulhu-mist/scene.js'
 import { SCENE as frostpunkScene } from './themes/frostpunk/scene.js'
 import { SCENE as frostpunkWhiteoutScene } from './themes/frostpunk-whiteout/scene.js'
+import { SCENE_DAY as automatonsDayScene, SCENE_NIGHT as automatonsNightScene } from './themes/automatons/scene.js'
 
 /**
  * One theme on the card. Like /custom-theme, a theme is a backdrop alone: a scene, the glass over it and the kind
@@ -65,6 +66,24 @@ export const THEMES: MyTheme[] = [
     // The whiteout's cold pale grey, so the panels keep the scene's ground and dark text stays readable.
     glass: { blur: 10, tint: '#dfe5eb', opacity: 0.55 },
     scene: frostpunkWhiteoutScene,
+  },
+  {
+    id: 'automatons',
+    title: 'Frostpunk — The Automatons',
+    blurb: 'Steam automatons striding across a frozen plain at night on jointed legs, furnaces glowing, stacks smoking and searchlights on the snow, under a faint aurora.',
+    window: 'dark',
+    // The plain's night steel blue, so the panels keep the scene's ground.
+    glass: { blur: 10, tint: '#121c28', opacity: 0.55 },
+    scene: automatonsNightScene,
+  },
+  {
+    id: 'automatons-whiteout',
+    title: 'Frostpunk — Automatons in the Whiteout',
+    blurb: 'The same automatons by grey daylight, dark iron striding through the snow with smoke rolling from their stacks across a pale sky.',
+    window: 'light',
+    // The whiteout's cold pale grey, so the panels keep the scene's ground and dark text stays readable.
+    glass: { blur: 10, tint: '#dfe5eb', opacity: 0.55 },
+    scene: automatonsDayScene,
   },
 ]
 
