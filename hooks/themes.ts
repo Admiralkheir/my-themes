@@ -2,6 +2,7 @@ import type { ThemeBackdropGlass } from 'claude-code'
 
 import { SCENE as cthulhuScene } from './themes/cthulhu/scene.js'
 import { SCENE as cthulhuMistScene } from './themes/cthulhu-mist/scene.js'
+import { SCENE as frostpunkScene } from './themes/frostpunk/scene.js'
 
 /**
  * One theme on the card. Like /custom-theme, a theme is a backdrop alone: a scene, the glass over it and the kind
@@ -45,6 +46,15 @@ export const THEMES: MyTheme[] = [
     // The overcast's cold grey, so the panels keep the scene's ground and dark text stays readable.
     glass: { blur: 10, tint: '#d5dbde', opacity: 0.55 },
     scene: cthulhuMistScene,
+  },
+  {
+    id: 'frostpunk',
+    title: 'Frostpunk — The Last City',
+    blurb: 'A city ringed around its great generator in a frozen crater, where the furnace breathes, smoke leans into the blizzard and, now and then, a steam walker strides along the rim.',
+    window: 'dark',
+    // The blizzard night's steel blue, so the panels keep the scene's ground.
+    glass: { blur: 10, tint: '#121c28', opacity: 0.55 },
+    scene: frostpunkScene,
   },
 ]
 

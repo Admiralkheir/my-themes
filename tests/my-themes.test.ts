@@ -110,3 +110,16 @@ test('the light theme asks for a light window and still sends no palette', async
   expect(JSON.stringify(seen.sets[0]?.backdrop)).toContain('"scene":"cthulhu-mist"')
   expect(seen.store['project:/repo']).toBe('cthulhu-mist')
 })
+
+test('the frostpunk theme asks for a dark window and sends no palette', async ($, on) => {
+  const seen = world(on)
+
+  await start($)
+  await $.command.run({ command: 'my-theme', args: 'frostpunk session' } as never)
+
+  expect(seen.sets.length).toBe(1)
+  expect(seen.sets[0]?.colors).toBeUndefined()
+  expect(seen.sets[0]?.overrideColorScheme).toBe('dark')
+  expect(JSON.stringify(seen.sets[0]?.backdrop)).toContain('"scene":"frostpunk"')
+  expect(seen.store['session:local_a']).toEqual({ theme: 'frostpunk' })
+})
