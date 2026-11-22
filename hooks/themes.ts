@@ -3,6 +3,7 @@ import type { ThemeBackdropGlass } from 'claude-code'
 import { SCENE as cthulhuScene } from './themes/cthulhu/scene.js'
 import { SCENE as cthulhuMistScene } from './themes/cthulhu-mist/scene.js'
 import { SCENE as frostpunkScene } from './themes/frostpunk/scene.js'
+import { SCENE as frostpunkWhiteoutScene } from './themes/frostpunk-whiteout/scene.js'
 
 /**
  * One theme on the card. Like /custom-theme, a theme is a backdrop alone: a scene, the glass over it and the kind
@@ -55,6 +56,15 @@ export const THEMES: MyTheme[] = [
     // The blizzard night's steel blue, so the panels keep the scene's ground.
     glass: { blur: 10, tint: '#121c28', opacity: 0.55 },
     scene: frostpunkScene,
+  },
+  {
+    id: 'frostpunk-whiteout',
+    title: 'Frostpunk — Whiteout',
+    blurb: 'The same frozen city by grey daylight, where the generator stands dark against the snow, its smoke rolls charcoal across a pale sky and, now and then, a steam walker strides along the rim.',
+    window: 'light',
+    // The whiteout's cold pale grey, so the panels keep the scene's ground and dark text stays readable.
+    glass: { blur: 10, tint: '#dfe5eb', opacity: 0.55 },
+    scene: frostpunkWhiteoutScene,
   },
 ]
 

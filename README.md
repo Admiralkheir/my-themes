@@ -19,6 +19,7 @@ A project is a git repository's main working tree, so its worktrees share its pi
 | `cthulhu` | Cthulhu — R'lyeh | dark | An abyss where tentacles writhe, bubbles rise and, now and then, an eye opens. |
 | `cthulhu-mist` | Cthulhu — Mist over R'lyeh | light | A cold grey sea in drizzle, where something vast with wings looms out of the fog and, now and then, looks back. |
 | `frostpunk` | Frostpunk — The Last City | dark | A city ringed around its great generator in a frozen crater, where the furnace breathes, smoke leans into the blizzard and, now and then, a steam walker strides along the rim. |
+| `frostpunk-whiteout` | Frostpunk — Whiteout | light | The same frozen city by grey daylight, where the generator stands dark against the snow, its smoke rolls charcoal across a pale sky and, now and then, a steam walker strides along the rim. |
 
 ## Install
 
