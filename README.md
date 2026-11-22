@@ -28,6 +28,7 @@ A project is a git repository's main working tree, so its worktrees share its pi
 | `colour-blight` | Cthulhu — The Blasted Heath | light | The same farm by a bleached day, ash-grey grass and grey trees, with the colour left only in the well, the crystals and the grass around it. |
 | `lighthouse` | Cthulhu — The Light | dark | A lighthouse on a bare rock in a black-and-white storm, its beam swinging toward you and away, gulls crossing, the sea breaking white and a limb rising from the swell. |
 | `lighthouse-day` | Cthulhu — The Light by Day | light | The same lighthouse under a silver sky, the white tower against the grey sea, spray bursting on the rock and a limb rising from the swell. |
+| `yog-sothoth-vellum` | Cthulhu — Yog-Sothoth on Vellum | light | A plate from a forbidden book: Yog-Sothoth as a cluster of globes drawn in iron-gall ink, held in astrolabe rings that turn against each other, with a red rubric and the text running down the margin. |
 
 ## Install
 

@@ -8,6 +8,7 @@ import { SCENE_DAY as automatonsDayScene, SCENE_NIGHT as automatonsNightScene } 
 import { SCENE_FOG as innsmouthFogScene, SCENE_NIGHT as innsmouthNightScene } from './themes/innsmouth/scene.js'
 import { SCENE_BLIGHT as colourBlightScene, SCENE_NIGHT as colourNightScene } from './themes/colour/scene.js'
 import { SCENE_DAY as lighthouseDayScene, SCENE_NIGHT as lighthouseNightScene } from './themes/lighthouse/scene.js'
+import { SCENE as yogSothothVellumScene } from './themes/yog-sothoth/scene.js'
 
 /**
  * One theme on the card. Like /custom-theme, a theme is a backdrop alone: a scene, the glass over it and the kind
@@ -141,6 +142,15 @@ export const THEMES: MyTheme[] = [
     // The silver sky's pale grey, so the panels keep the scene's ground and dark text stays readable.
     glass: { blur: 10, tint: '#d9d9d6', opacity: 0.55 },
     scene: lighthouseDayScene,
+  },
+  {
+    id: 'yog-sothoth-vellum',
+    title: 'Cthulhu — Yog-Sothoth on Vellum',
+    blurb: 'A plate from a forbidden book: Yog-Sothoth as a cluster of globes drawn in iron-gall ink, held in astrolabe rings that turn against each other, with a red rubric and the text running down the margin.',
+    window: 'light',
+    // The vellum's warm parchment, so the panels keep the scene's ground and dark text stays readable.
+    glass: { blur: 10, tint: '#eadfc6', opacity: 0.55 },
+    scene: yogSothothVellumScene,
   },
 ]
 

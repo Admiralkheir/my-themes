@@ -240,3 +240,16 @@ test('the lighthouse-day theme asks for a light window and sends no palette', as
   expect(JSON.stringify(seen.sets[0]?.backdrop)).toContain('"scene":"lighthouse-day"')
   expect(seen.store['session:local_a']).toEqual({ theme: 'lighthouse-day' })
 })
+
+test('the yog-sothoth-vellum theme asks for a light window and sends no palette', async ($, on) => {
+  const seen = world(on)
+
+  await start($)
+  await $.command.run({ command: 'my-theme', args: 'yog-sothoth-vellum session' } as never)
+
+  expect(seen.sets.length).toBe(1)
+  expect(seen.sets[0]?.colors).toBeUndefined()
+  expect(seen.sets[0]?.overrideColorScheme).toBe('light')
+  expect(JSON.stringify(seen.sets[0]?.backdrop)).toContain('"scene":"yog-sothoth-vellum"')
+  expect(seen.store['session:local_a']).toEqual({ theme: 'yog-sothoth-vellum' })
+})
