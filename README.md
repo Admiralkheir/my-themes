@@ -29,6 +29,16 @@ A project is a git repository's main working tree, so its worktrees share its pi
 | `lighthouse` | Cthulhu — The Light | dark | A lighthouse on a bare rock in a black-and-white storm, its beam swinging toward you and away, gulls crossing, the sea breaking white and a limb rising from the swell. |
 | `lighthouse-day` | Cthulhu — The Light by Day | light | The same lighthouse under a silver sky, the white tower against the grey sea, spray bursting on the rock and a limb rising from the swell. |
 | `yog-sothoth-vellum` | Cthulhu — Yog-Sothoth on Vellum | light | A plate from a forbidden book: Yog-Sothoth as a cluster of globes drawn in iron-gall ink, held in astrolabe rings that turn against each other, with a red rubric and the text running down the margin. |
+| `eva-tokyo3` | Evangelion — Tokyo-3 at Dusk | dark | The fortress city at sunset, where towers sink into the Geofront and rise again, Unit-01 stands among them, wires sag between the telephone poles and, now and then, its eyes light. |
+| `eva-tokyo3-summer` | Evangelion — Tokyo-3, Endless Summer | light | The same city at a hard summer noon after Second Impact, thunderheads over the hills, heat haze off the street and Unit-01 standing purple and green among the towers. |
+| `eva-nerv` | Evangelion — NERV, Pattern Blue | dark | The command deck as an Angel comes: a honeycomb of EMERGENCY panels flashing, the three MAGI voting, sync waves swelling and an alarm band crawling across the top, in orange on black. |
+| `eva-nerv-briefing` | Evangelion — NERV Briefing | light | The same screens in the title cards' white, black and red: compressed serif, flashing red panels and the MAGI weighing their verdict. |
+| `eva-yashima` | Evangelion — Operation Yashima | dark | Ramiel turning over a blacked-out Tokyo-3, drilling toward the Geofront, while the positron rifle on the hill waits on all of Japan's power and, now and then, fires into an orange flare of AT Field. |
+| `eva-ramiel-noon` | Evangelion — Ramiel at Noon | light | The blue octahedron hanging over the lake on a clear day, its faces turning and holding the sky, its likeness broken by ripples below. |
+| `eva-geofront` | Evangelion — Geofront Alert | dark | The hollow under Tokyo-3 with the city's towers hanging from its roof, shafts of light on the forest and NERV's black pyramid, red lamps pulsing along its edges. |
+| `eva-geofront-day` | Evangelion — The Geofront by Day | light | The same hollow with daylight piped down onto green trees and a blue lake, dust drifting in the shafts around the black pyramid. |
+| `eva-red-sea` | Evangelion — The Red Sea | dark | The beach after Third Impact at night: a sea of LCL breaking red on white sand, a moon smeared with blood and the broken white head on the horizon, one eye open, looking. |
+| `eva-red-sea-day` | Evangelion — The Red Sea by Day | light | The same beach under a bleached, rose-white sky, the sea still red, the sand white and the giant head pale against the haze. |
 
 ## Install
 
@@ -56,7 +66,7 @@ If the app still shows "A mod set the colors" from version 0.1.0, press Remove c
 
 ## Adding a theme
 
-1. Make a folder under `hooks/themes/<id>/` with `scene.ts` (one SVG string). Tentacles that writhe come from `hooks/themes/tentacles.ts`.
+1. Make a folder under `hooks/themes/<id>/` with `scene.ts` (one SVG string). Tentacles that writhe come from `hooks/themes/tentacles.ts`; the Evangelion scenes share their helpers and Unit-01 in `hooks/themes/eva.ts`.
 2. Add an entry for it to `THEMES` in `hooks/themes.ts`: its `window` (`light` or `dark`) and its `glass`, with a `tint` from the theme's ground.
 3. Add a row for it to the table under Themes above.
 4. Raise `version` in `.claude-plugin/plugin.json`, run `claude plugin test .`, then commit and push.

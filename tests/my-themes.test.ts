@@ -253,3 +253,133 @@ test('the yog-sothoth-vellum theme asks for a light window and sends no palette'
   expect(JSON.stringify(seen.sets[0]?.backdrop)).toContain('"scene":"yog-sothoth-vellum"')
   expect(seen.store['session:local_a']).toEqual({ theme: 'yog-sothoth-vellum' })
 })
+
+test('the eva-tokyo3 theme asks for a dark window and sends no palette', async ($, on) => {
+  const seen = world(on)
+
+  await start($)
+  await $.command.run({ command: 'my-theme', args: 'eva-tokyo3 session' } as never)
+
+  expect(seen.sets.length).toBe(1)
+  expect(seen.sets[0]?.colors).toBeUndefined()
+  expect(seen.sets[0]?.overrideColorScheme).toBe('dark')
+  expect(JSON.stringify(seen.sets[0]?.backdrop)).toContain('"scene":"eva-tokyo3"')
+  expect(seen.store['session:local_a']).toEqual({ theme: 'eva-tokyo3' })
+})
+
+test('the eva-tokyo3-summer theme asks for a light window and sends no palette', async ($, on) => {
+  const seen = world(on)
+
+  await start($)
+  await $.command.run({ command: 'my-theme', args: 'eva-tokyo3-summer session' } as never)
+
+  expect(seen.sets.length).toBe(1)
+  expect(seen.sets[0]?.colors).toBeUndefined()
+  expect(seen.sets[0]?.overrideColorScheme).toBe('light')
+  expect(JSON.stringify(seen.sets[0]?.backdrop)).toContain('"scene":"eva-tokyo3-summer"')
+  expect(seen.store['session:local_a']).toEqual({ theme: 'eva-tokyo3-summer' })
+})
+
+test('the eva-nerv theme asks for a dark window and sends no palette', async ($, on) => {
+  const seen = world(on)
+
+  await start($)
+  await $.command.run({ command: 'my-theme', args: 'eva-nerv session' } as never)
+
+  expect(seen.sets.length).toBe(1)
+  expect(seen.sets[0]?.colors).toBeUndefined()
+  expect(seen.sets[0]?.overrideColorScheme).toBe('dark')
+  expect(JSON.stringify(seen.sets[0]?.backdrop)).toContain('"scene":"eva-nerv"')
+  expect(seen.store['session:local_a']).toEqual({ theme: 'eva-nerv' })
+})
+
+test('the eva-nerv-briefing theme asks for a light window and sends no palette', async ($, on) => {
+  const seen = world(on)
+
+  await start($)
+  await $.command.run({ command: 'my-theme', args: 'eva-nerv-briefing session' } as never)
+
+  expect(seen.sets.length).toBe(1)
+  expect(seen.sets[0]?.colors).toBeUndefined()
+  expect(seen.sets[0]?.overrideColorScheme).toBe('light')
+  expect(JSON.stringify(seen.sets[0]?.backdrop)).toContain('"scene":"eva-nerv-briefing"')
+  expect(seen.store['session:local_a']).toEqual({ theme: 'eva-nerv-briefing' })
+})
+
+test('the eva-yashima theme asks for a dark window and sends no palette', async ($, on) => {
+  const seen = world(on)
+
+  await start($)
+  await $.command.run({ command: 'my-theme', args: 'eva-yashima session' } as never)
+
+  expect(seen.sets.length).toBe(1)
+  expect(seen.sets[0]?.colors).toBeUndefined()
+  expect(seen.sets[0]?.overrideColorScheme).toBe('dark')
+  expect(JSON.stringify(seen.sets[0]?.backdrop)).toContain('"scene":"eva-yashima"')
+  expect(seen.store['session:local_a']).toEqual({ theme: 'eva-yashima' })
+})
+
+test('the eva-ramiel-noon theme asks for a light window and sends no palette', async ($, on) => {
+  const seen = world(on)
+
+  await start($)
+  await $.command.run({ command: 'my-theme', args: 'eva-ramiel-noon session' } as never)
+
+  expect(seen.sets.length).toBe(1)
+  expect(seen.sets[0]?.colors).toBeUndefined()
+  expect(seen.sets[0]?.overrideColorScheme).toBe('light')
+  expect(JSON.stringify(seen.sets[0]?.backdrop)).toContain('"scene":"eva-ramiel-noon"')
+  expect(seen.store['session:local_a']).toEqual({ theme: 'eva-ramiel-noon' })
+})
+
+test('the eva-geofront theme asks for a dark window and sends no palette', async ($, on) => {
+  const seen = world(on)
+
+  await start($)
+  await $.command.run({ command: 'my-theme', args: 'eva-geofront session' } as never)
+
+  expect(seen.sets.length).toBe(1)
+  expect(seen.sets[0]?.colors).toBeUndefined()
+  expect(seen.sets[0]?.overrideColorScheme).toBe('dark')
+  expect(JSON.stringify(seen.sets[0]?.backdrop)).toContain('"scene":"eva-geofront"')
+  expect(seen.store['session:local_a']).toEqual({ theme: 'eva-geofront' })
+})
+
+test('the eva-geofront-day theme asks for a light window and sends no palette', async ($, on) => {
+  const seen = world(on)
+
+  await start($)
+  await $.command.run({ command: 'my-theme', args: 'eva-geofront-day session' } as never)
+
+  expect(seen.sets.length).toBe(1)
+  expect(seen.sets[0]?.colors).toBeUndefined()
+  expect(seen.sets[0]?.overrideColorScheme).toBe('light')
+  expect(JSON.stringify(seen.sets[0]?.backdrop)).toContain('"scene":"eva-geofront-day"')
+  expect(seen.store['session:local_a']).toEqual({ theme: 'eva-geofront-day' })
+})
+
+test('the eva-red-sea theme asks for a dark window and sends no palette', async ($, on) => {
+  const seen = world(on)
+
+  await start($)
+  await $.command.run({ command: 'my-theme', args: 'eva-red-sea session' } as never)
+
+  expect(seen.sets.length).toBe(1)
+  expect(seen.sets[0]?.colors).toBeUndefined()
+  expect(seen.sets[0]?.overrideColorScheme).toBe('dark')
+  expect(JSON.stringify(seen.sets[0]?.backdrop)).toContain('"scene":"eva-red-sea"')
+  expect(seen.store['session:local_a']).toEqual({ theme: 'eva-red-sea' })
+})
+
+test('the eva-red-sea-day theme asks for a light window and sends no palette', async ($, on) => {
+  const seen = world(on)
+
+  await start($)
+  await $.command.run({ command: 'my-theme', args: 'eva-red-sea-day session' } as never)
+
+  expect(seen.sets.length).toBe(1)
+  expect(seen.sets[0]?.colors).toBeUndefined()
+  expect(seen.sets[0]?.overrideColorScheme).toBe('light')
+  expect(JSON.stringify(seen.sets[0]?.backdrop)).toContain('"scene":"eva-red-sea-day"')
+  expect(seen.store['session:local_a']).toEqual({ theme: 'eva-red-sea-day' })
+})
