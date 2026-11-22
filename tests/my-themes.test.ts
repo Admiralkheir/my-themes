@@ -383,3 +383,107 @@ test('the eva-red-sea-day theme asks for a light window and sends no palette', a
   expect(JSON.stringify(seen.sets[0]?.backdrop)).toContain('"scene":"eva-red-sea-day"')
   expect(seen.store['session:local_a']).toEqual({ theme: 'eva-red-sea-day' })
 })
+
+test('the metro-station theme asks for a dark window and sends no palette', async ($, on) => {
+  const seen = world(on)
+
+  await start($)
+  await $.command.run({ command: 'my-theme', args: 'metro-station session' } as never)
+
+  expect(seen.sets.length).toBe(1)
+  expect(seen.sets[0]?.colors).toBeUndefined()
+  expect(seen.sets[0]?.overrideColorScheme).toBe('dark')
+  expect(JSON.stringify(seen.sets[0]?.backdrop)).toContain('"scene":"metro-station"')
+  expect(seen.store['session:local_a']).toEqual({ theme: 'metro-station' })
+})
+
+test('the metro-polis theme asks for a light window and sends no palette', async ($, on) => {
+  const seen = world(on)
+
+  await start($)
+  await $.command.run({ command: 'my-theme', args: 'metro-polis session' } as never)
+
+  expect(seen.sets.length).toBe(1)
+  expect(seen.sets[0]?.colors).toBeUndefined()
+  expect(seen.sets[0]?.overrideColorScheme).toBe('light')
+  expect(JSON.stringify(seen.sets[0]?.backdrop)).toContain('"scene":"metro-polis"')
+  expect(seen.store['session:local_a']).toEqual({ theme: 'metro-polis' })
+})
+
+test('the metro-surface theme asks for a dark window and sends no palette', async ($, on) => {
+  const seen = world(on)
+
+  await start($)
+  await $.command.run({ command: 'my-theme', args: 'metro-surface session' } as never)
+
+  expect(seen.sets.length).toBe(1)
+  expect(seen.sets[0]?.colors).toBeUndefined()
+  expect(seen.sets[0]?.overrideColorScheme).toBe('dark')
+  expect(JSON.stringify(seen.sets[0]?.backdrop)).toContain('"scene":"metro-surface"')
+  expect(seen.store['session:local_a']).toEqual({ theme: 'metro-surface' })
+})
+
+test('the metro-ash theme asks for a light window and sends no palette', async ($, on) => {
+  const seen = world(on)
+
+  await start($)
+  await $.command.run({ command: 'my-theme', args: 'metro-ash session' } as never)
+
+  expect(seen.sets.length).toBe(1)
+  expect(seen.sets[0]?.colors).toBeUndefined()
+  expect(seen.sets[0]?.overrideColorScheme).toBe('light')
+  expect(JSON.stringify(seen.sets[0]?.backdrop)).toContain('"scene":"metro-ash"')
+  expect(seen.store['session:local_a']).toEqual({ theme: 'metro-ash' })
+})
+
+test('the metro-locomotive theme asks for a dark window and sends no palette', async ($, on) => {
+  const seen = world(on)
+
+  await start($)
+  await $.command.run({ command: 'my-theme', args: 'metro-locomotive session' } as never)
+
+  expect(seen.sets.length).toBe(1)
+  expect(seen.sets[0]?.colors).toBeUndefined()
+  expect(seen.sets[0]?.overrideColorScheme).toBe('dark')
+  expect(JSON.stringify(seen.sets[0]?.backdrop)).toContain('"scene":"metro-locomotive"')
+  expect(seen.store['session:local_a']).toEqual({ theme: 'metro-locomotive' })
+})
+
+test('the metro-locomotive-day theme asks for a light window and sends no palette', async ($, on) => {
+  const seen = world(on)
+
+  await start($)
+  await $.command.run({ command: 'my-theme', args: 'metro-locomotive-day session' } as never)
+
+  expect(seen.sets.length).toBe(1)
+  expect(seen.sets[0]?.colors).toBeUndefined()
+  expect(seen.sets[0]?.overrideColorScheme).toBe('light')
+  expect(JSON.stringify(seen.sets[0]?.backdrop)).toContain('"scene":"metro-locomotive-day"')
+  expect(seen.store['session:local_a']).toEqual({ theme: 'metro-locomotive-day' })
+})
+
+test('the metro-dry-sea-night theme asks for a dark window and sends no palette', async ($, on) => {
+  const seen = world(on)
+
+  await start($)
+  await $.command.run({ command: 'my-theme', args: 'metro-dry-sea-night session' } as never)
+
+  expect(seen.sets.length).toBe(1)
+  expect(seen.sets[0]?.colors).toBeUndefined()
+  expect(seen.sets[0]?.overrideColorScheme).toBe('dark')
+  expect(JSON.stringify(seen.sets[0]?.backdrop)).toContain('"scene":"metro-dry-sea-night"')
+  expect(seen.store['session:local_a']).toEqual({ theme: 'metro-dry-sea-night' })
+})
+
+test('the metro-dry-sea theme asks for a light window and sends no palette', async ($, on) => {
+  const seen = world(on)
+
+  await start($)
+  await $.command.run({ command: 'my-theme', args: 'metro-dry-sea session' } as never)
+
+  expect(seen.sets.length).toBe(1)
+  expect(seen.sets[0]?.colors).toBeUndefined()
+  expect(seen.sets[0]?.overrideColorScheme).toBe('light')
+  expect(JSON.stringify(seen.sets[0]?.backdrop)).toContain('"scene":"metro-dry-sea"')
+  expect(seen.store['session:local_a']).toEqual({ theme: 'metro-dry-sea' })
+})

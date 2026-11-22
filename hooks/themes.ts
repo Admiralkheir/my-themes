@@ -14,6 +14,10 @@ import { SCENE_ALERT as evaNervAlertScene, SCENE_BRIEFING as evaNervBriefingScen
 import { SCENE_NIGHT as evaYashimaNightScene, SCENE_NOON as evaYashimaNoonScene } from './themes/eva-yashima/scene.js'
 import { SCENE_ALERT as evaGeofrontAlertScene, SCENE_DAY as evaGeofrontDayScene } from './themes/eva-geofront/scene.js'
 import { SCENE_DAY as evaRedSeaDayScene, SCENE_NIGHT as evaRedSeaNightScene } from './themes/eva-red-sea/scene.js'
+import { SCENE_POLIS as polisScene, SCENE_STATION as stationScene } from './themes/metro-station/scene.js'
+import { SCENE_ASH as ashScene, SCENE_SURFACE as surfaceScene } from './themes/metro-surface/scene.js'
+import { SCENE_DAY as locomotiveDayScene, SCENE_NIGHT as locomotiveNightScene } from './themes/metro-locomotive/scene.js'
+import { SCENE_DAY as drySeaDayScene, SCENE_NIGHT as drySeaNightScene } from './themes/metro-dry-sea/scene.js'
 
 /**
  * One theme on the card. Like /custom-theme, a theme is a backdrop alone: a scene, the glass over it and the kind
@@ -246,6 +250,78 @@ export const THEMES: MyTheme[] = [
     // The bleached sky's rose white, so the panels keep the scene's ground and dark text stays readable.
     glass: { blur: 10, tint: '#f3e9e8', opacity: 0.55 },
     scene: evaRedSeaDayScene,
+  },
+  {
+    id: 'metro-station',
+    title: 'Metro — The Station',
+    blurb: 'A pylon station lived in down its central hall: tents along the platform lit from inside, strings of bulbs between the arches, laundry on a line, a red banner, sparks from a barrel fire and a lamp swinging on its chain.',
+    window: 'dark',
+    // The station's smoky brown-black, so the panels keep the scene's ground.
+    glass: { blur: 10, tint: '#140f0b', opacity: 0.55 },
+    scene: stationScene,
+  },
+  {
+    id: 'metro-polis',
+    title: 'Metro — Polis',
+    blurb: 'The station of the learned in pale marble: brass chandeliers under every other arch, a green banner, book stalls and a statue on its plinth, with dust drifting and the same lamp swinging.',
+    window: 'light',
+    // The marble's warm pale stone, so the panels keep the scene's ground and dark text stays readable.
+    glass: { blur: 10, tint: '#e8e2d6', opacity: 0.55 },
+    scene: polisScene,
+  },
+  {
+    id: 'metro-surface',
+    title: 'Metro — The Dead City',
+    blurb: "Moscow's ruins under a poisoned night: a Stalinist high-rise with its red star, the TV tower, broken panel blocks and a fallen crane, a metro entrance with its red M flickering and winged things circling.",
+    window: 'dark',
+    // The poisoned night's green-black, so the panels keep the scene's ground.
+    glass: { blur: 10, tint: '#0d1411', opacity: 0.55 },
+    scene: surfaceScene,
+  },
+  {
+    id: 'metro-ash',
+    title: 'Metro — Ash Winter',
+    blurb: 'The same ruins on a nuclear-winter day: a weak sun through ash-grey cloud, the towers grey on grey, ash falling and winged things still circling.',
+    window: 'light',
+    // The ash sky's pale grey, so the panels keep the scene's ground and dark text stays readable.
+    glass: { blur: 10, tint: '#d6d3cc', opacity: 0.55 },
+    scene: ashScene,
+  },
+  {
+    id: 'metro-locomotive',
+    title: 'Metro — Eastbound by Night',
+    blurb: 'An armoured steam locomotive crossing a bridge over a frozen river at night, girders streaming past, wheels and rod turning, smoke rolling back from the stack and the headlamp cutting through the snow.',
+    window: 'dark',
+    // The winter night's blue-black, so the panels keep the scene's ground.
+    glass: { blur: 10, tint: '#0f1620', opacity: 0.55 },
+    scene: locomotiveNightScene,
+  },
+  {
+    id: 'metro-locomotive-day',
+    title: 'Metro — The Frozen River',
+    blurb: "The same train by an overcast day, black iron against white ice and a pale sky, the far bank's pines and onion domes sliding by and grey smoke trailing behind.",
+    window: 'light',
+    // The overcast's cold pale grey, so the panels keep the scene's ground and dark text stays readable.
+    glass: { blur: 10, tint: '#dde3e7', opacity: 0.55 },
+    scene: locomotiveDayScene,
+  },
+  {
+    id: 'metro-dry-sea-night',
+    title: 'Metro — Desert Night',
+    blurb: "A rusted ship keeled over on a dried-up seabed under stars and moon, a lantern in its bridge, a fire under its bow, a derrick's flare burning on the mesas and, now and then, a meteor.",
+    window: 'dark',
+    // The desert night's brown-black, so the panels keep the scene's ground.
+    glass: { blur: 10, tint: '#16110f', opacity: 0.55 },
+    scene: drySeaNightScene,
+  },
+  {
+    id: 'metro-dry-sea',
+    title: 'Metro — The Dry Sea',
+    blurb: 'The same wreck at a white-hot noon: cracked, salt-streaked seabed, an old pier walking out to nothing, dust running on the wind, a tumbleweed rolling past and a bird circling.',
+    window: 'light',
+    // The noon's bleached sand, so the panels keep the scene's ground and dark text stays readable.
+    glass: { blur: 10, tint: '#e8ddc7', opacity: 0.55 },
+    scene: drySeaDayScene,
   },
 ]
 
